@@ -1,1 +1,1 @@
-git has practice file that is modified
+git has practice file that is modified but is not over for delivery
