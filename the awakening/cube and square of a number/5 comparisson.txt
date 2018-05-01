@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+	int a,b,c,d,e;
+	printf("enter five numbers\na\nb\nc\nd\ne\n");
+	scanf("%d%d%d%d%d",&a,&b,&c,&d,&e);
+	
+	if ((a>b)&&(a>c)&&(a>d)&&(a>e))
+	{
+		printf("%d is the largest\n",a);
+	}
+	else
+	{
+		if ((b>a)&&(b>c)&&(b>d)&&(b>e))
+		{
+			printf("%d is the largest\n",b);
+		}
+		else
+		{
+			if ((c>a)&&(c>b)&&(c>d)&&(c>e))
+			{
+				printf("%d is largest\n",c);
+			}
+			else
+			{
+				if ((d>a)&&(d>b)&&(d>c)&&(d>e))
+				{
+					printf("%d is the largest\n",d);
+				}
+				else
+				{
+					if ((e>a)&&(e>b)&&(e>c)&&(e>d))
+					{
+						prinf("%d is the largest\n",e);
+					}
+				}
+			}
+		}
+	}
+	
+	
+		if ((a<b)&&(a<c)&&(a<d)&&(a<e))
+	{
+		printf("%d is the smallest\n",a);
+	}
+	else
+	{
+		if ((b<a)&&(b<c)&&(b<d)&&(b<e))
+		{
+			printf("%d is the smallest\n",b);
+		}
+		else
+		{
+			if ((c<a)&&(c<b)&&(c<d)&&(c<e))
+			{
+				printf("%d is smallest\n",c);
+			}
+			else
+			{
+				if ((d<a)&&(d<b)&&(d<c)&&(d<e))
+				{
+					printf("%d is the smallest\n",d);
+				}
+				else
+				{
+					if ((e<a)&&(e<b)&&(e<c)&&(e<d))
+					{
+						prinf("%d is the smallest\n",e);
+					}
+				}
+			}
+		}
+	}
+	
+}

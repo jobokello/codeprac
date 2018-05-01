@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "main", "main.exe", "{B5B4D14A-B02E-4CE4-B0A2-8F4421C75376}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 00000000-0000-0000-0000-000000000000
+		Executable = C:\Users\JOB OKELLO\Desktop\sem 2 downloaded\CSC 121 Programming And Problem Solving\the awakening\credit limit calculator\main.exe
+		RemoteMachine = DESKTOP-L3TVR6I
+		StartingDirectory = C:\Users\JOB OKELLO\Desktop\sem 2 downloaded\CSC 121 Programming And Problem Solving\the awakening\credit limit calculator
+		Environment = Default
+		LaunchingEngine = 00000000-0000-0000-0000-000000000000
+		UseLegacyDebugEngines = No
+		LaunchSQLEngine = No
+		AttachLaunchAction = No
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5B4D14A-B02E-4CE4-B0A2-8F4421C75376}.Release|x64.ActiveCfg = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
