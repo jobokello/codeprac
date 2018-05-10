@@ -15672,8 +15672,8 @@ DEF Apartment_2 Transform {
 	}
 }
 DEF Anigroup-1-Intrp1-transform Transform {
-	translation	-12.4574 0.2309 0.2683
-	rotation	0 1 0  1.5708
+	translation	8.8162 0.2517 0.3271
+	rotation	-0.0157532 0.999868 0.00407935  1.5658
 	scale	0.133 0.133 0.133
 	children [ 
 	    Shape {
@@ -44141,9 +44141,10 @@ DEF Anigroup-1-Intrp1-transform Transform {
 	    DEF Anigroup-1-Intrp1-translation PositionInterpolator {
 		    key	[ 0, 0.199079, 0.239356, 0.279632,
 				      0.319908, 0.359033, 0.39931, 0.439586,
-				      0.479862, 0.518987, 0.559263, 0.59954,
-				      0.639816, 0.678941, 0.719218, 0.759493,
-				      0.79977, 0.838896, 0.879171, 0.919448 ]
+				      0.439586, 0.479862, 0.518987, 0.559263,
+				      0.559839, 0.59954, 0.639816, 0.678941,
+				      0.679517, 0.719218, 0.759493, 0.79977,
+				      0.838896, 0.879171, 0.919448 ]
 		    keyValue	[ -12.4574 0.2309 0.2683,
 				      -9.4574 0.2329 0.2683,
 				      -8.9158 0.2314 0.4062,
@@ -44151,13 +44152,16 @@ DEF Anigroup-1-Intrp1-transform Transform {
 				      -8.28412 0.228868 1.05291,
 				      -8.2361 0.2289 1.5749,
 				      -8.2361 0.2289 2.9909,
+				      -8.2361 0.2289 2.9909,
 				      -8.0921 0.2289 3.9749,
 				      -7.593 0.2271 4.8966,
 				      -6.0078 0.2266 5.6267,
 				      -4.1941 0.2251 5.7109,
+				      -6.0078 0.2266 5.6267,
 				      -0.5941 0.2247 5.6933,
 				      1.2059 0.2247 5.6933,
 				      3.2099 0.2367 5.5493,
+				      1.2059 0.2247 5.6933,
 				      4.4482 0.2418 4.4693,
 				      4.8873 0.2379 2.7485,
 				      4.8993 0.2379 0.9485,
@@ -44169,9 +44173,10 @@ DEF Anigroup-1-Intrp1-transform Transform {
 	    DEF Anigroup-1-Intrp3-rotation OrientationInterpolator {
 		    key	[ 0, 0.199079, 0.239356, 0.279632,
 				      0.319908, 0.359033, 0.39931, 0.439586,
-				      0.479862, 0.518987, 0.559263, 0.59954,
-				      0.639816, 0.678941, 0.719218, 0.759493,
-				      0.79977, 0.838896, 0.879171, 0.919448 ]
+				      0.439586, 0.479862, 0.518987, 0.559263,
+				      0.559839, 0.59954, 0.639816, 0.678941,
+				      0.679517, 0.719218, 0.759493, 0.79977,
+				      0.838896, 0.879171, 0.919448 ]
 		    keyValue	[ 0 1 0  1.5708,
 				      0.176939 0.968187 0.176938  1.60312,
 				      0.161549 0.957435 0.239209  1.25537,
@@ -44179,13 +44184,16 @@ DEF Anigroup-1-Intrp1-transform Transform {
 				      0.138661 0.864807 0.482578  0.607951,
 				      -0.0363357 -0.401369 0.915195  0.0158222,
 				      -0.0363357 -0.401369 0.915195  0.0158222,
+				      -0.0363357 -0.401369 0.915195  0.0158222,
 				      -0.177869 0.571293 -0.801241  0.703358,
 				      -0.226193 0.790006 -0.569848  0.926343,
 				      -0.228672 0.933399 -0.276542  1.4783,
 				      -0.0486036 0.998136 -0.0369207  1.57164,
+				      -0.228672 0.933399 -0.276542  1.4783,
 				      -0.00435552 0.999963 0.00736881  1.57033,
 				      -0.00435552 0.999963 0.00736881  1.57033,
 				      -0.212059 0.971476 -0.106134  2.01428,
+				      -0.00435552 0.999963 0.00736881  1.57033,
 				      -0.224514 0.97205 -0.0686393  2.67505,
 				      -0.0210397 0.99976 -0.00612333  3.14627,
 				      0.199501 0.979876 -0.00648787  3.14346,
@@ -44197,9 +44205,10 @@ DEF Anigroup-1-Intrp1-transform Transform {
 	    DEF Anigroup-1-Intrp5-scale PositionInterpolator {
 		    key	[ 0, 0.199079, 0.239356, 0.279632,
 				      0.319908, 0.359033, 0.39931, 0.439586,
-				      0.479862, 0.518987, 0.559263, 0.59954,
-				      0.639816, 0.678941, 0.719218, 0.759493,
-				      0.79977, 0.838896, 0.879171, 0.919448 ]
+				      0.439586, 0.479862, 0.518987, 0.559263,
+				      0.559839, 0.59954, 0.639816, 0.678941,
+				      0.679517, 0.719218, 0.759493, 0.79977,
+				      0.838896, 0.879171, 0.919448 ]
 		    keyValue	[ 0.133 0.133 0.133,
 				      0.133 0.133 0.133,
 				      0.133 0.133 0.133,
@@ -44219,7 +44228,14 @@ DEF Anigroup-1-Intrp1-transform Transform {
 				      0.133 0.133 0.133,
 				      0.133 0.133 0.133,
 				      0.133 0.133 0.133,
+				      0.133 0.133 0.133,
+				      0.133 0.133 0.133,
+				      0.133 0.133 0.133,
 				      0.133 0.133 0.133 ]
+	    }
+
+	    DEF Anigroup-1-Intrp13-Viewpoint Viewpoint {
+		    position	-0.967876 4.11658 54.4089
 	    }
 	]
 ROUTE Anigroup-1-TIMER.fraction_changed TO Anigroup-1-Intrp1-translation.set_fraction
@@ -52597,10 +52613,14 @@ DEF Anigroup-1-Intrp18-transform Transform {
     }
     }
 DEF Anigroup-1-Intrp12-translation PositionInterpolator {
-	key	[ 0, 0.518987, 0.559263, 0.59954,
-			  0.639816, 0.678941, 0.719218, 0.759493,
-			  0.79977, 0.838896, 0.879171, 0.919448 ]
+	key	[ 0, 0.439586, 0.518987, 0.559263,
+			  0.559839, 0.59954, 0.639816, 0.678941,
+			  0.679517, 0.719218, 0.759493, 0.79977,
+			  0.838896, 0.879171, 0.919448 ]
 	keyValue	[ 0 0 0,
+			  0 0 0,
+			  0 0 0,
+			  0 0 0,
 			  0 0 0,
 			  0 0 0,
 			  0 0 0,
@@ -52616,10 +52636,14 @@ DEF Anigroup-1-Intrp12-translation PositionInterpolator {
 ROUTE Anigroup-1-TIMER.fraction_changed TO Anigroup-1-Intrp12-translation.set_fraction
 ROUTE Anigroup-1-Intrp12-translation.value_changed TO Anigroup-1-Intrp12-transform.set_translation
 DEF Anigroup-1-Intrp14-rotation OrientationInterpolator {
-	key	[ 0, 0.518987, 0.559263, 0.59954,
-			  0.639816, 0.678941, 0.719218, 0.759493,
-			  0.79977, 0.838896, 0.879171, 0.919448 ]
+	key	[ 0, 0.439586, 0.518987, 0.559263,
+			  0.559839, 0.59954, 0.639816, 0.678941,
+			  0.679517, 0.719218, 0.759493, 0.79977,
+			  0.838896, 0.879171, 0.919448 ]
 	keyValue	[ 0 0 1  0,
+			  0 0 1  0,
+			  0 0 1  0,
+			  0 0 1  0,
 			  0 0 1  0,
 			  0 0 1  0,
 			  0 0 1  0,
@@ -52635,10 +52659,14 @@ DEF Anigroup-1-Intrp14-rotation OrientationInterpolator {
 ROUTE Anigroup-1-TIMER.fraction_changed TO Anigroup-1-Intrp14-rotation.set_fraction
 ROUTE Anigroup-1-Intrp14-rotation.value_changed TO Anigroup-1-Intrp12-transform.set_rotation
 DEF Anigroup-1-Intrp16-scale PositionInterpolator {
-	key	[ 0, 0.518987, 0.559263, 0.59954,
-			  0.639816, 0.678941, 0.719218, 0.759493,
-			  0.79977, 0.838896, 0.879171, 0.919448 ]
+	key	[ 0, 0.439586, 0.518987, 0.559263,
+			  0.559839, 0.59954, 0.639816, 0.678941,
+			  0.679517, 0.719218, 0.759493, 0.79977,
+			  0.838896, 0.879171, 0.919448 ]
 	keyValue	[ 1 1 1,
+			  1 1 1,
+			  1 1 1,
+			  1 1 1,
 			  1 1 1,
 			  1 1 1,
 			  1 1 1,
@@ -52654,9 +52682,13 @@ DEF Anigroup-1-Intrp16-scale PositionInterpolator {
 ROUTE Anigroup-1-TIMER.fraction_changed TO Anigroup-1-Intrp16-scale.set_fraction
 ROUTE Anigroup-1-Intrp16-scale.value_changed TO Anigroup-1-Intrp12-transform.set_scale
 DEF Anigroup-1-Intrp18-translation PositionInterpolator {
-	key	[ 0, 0.678941, 0.719218, 0.759493,
-			  0.79977, 0.838896, 0.879171, 0.919448 ]
+	key	[ 0, 0.439586, 0.559839, 0.678941,
+			  0.679517, 0.719218, 0.759493, 0.79977,
+			  0.838896, 0.879171, 0.919448 ]
 	keyValue	[ 5.45979e-005 5.36442e-007 0.000128597,
+			  5.45979e-005 5.36442e-007 0.000128597,
+			  5.45979e-005 5.36442e-007 0.000128597,
+			  5.45979e-005 5.36442e-007 0.000128597,
 			  5.45979e-005 5.36442e-007 0.000128597,
 			  5.45979e-005 5.36442e-007 0.000128597,
 			  5.45979e-005 5.36442e-007 0.000128597,
@@ -52668,9 +52700,13 @@ DEF Anigroup-1-Intrp18-translation PositionInterpolator {
 ROUTE Anigroup-1-TIMER.fraction_changed TO Anigroup-1-Intrp18-translation.set_fraction
 ROUTE Anigroup-1-Intrp18-translation.value_changed TO Anigroup-1-Intrp18-transform.set_translation
 DEF Anigroup-1-Intrp20-rotation OrientationInterpolator {
-	key	[ 0, 0.678941, 0.719218, 0.759493,
-			  0.79977, 0.838896, 0.879171, 0.919448 ]
+	key	[ 0, 0.439586, 0.559839, 0.678941,
+			  0.679517, 0.719218, 0.759493, 0.79977,
+			  0.838896, 0.879171, 0.919448 ]
 	keyValue	[ 0 0 1  0,
+			  0 0 1  0,
+			  0 0 1  0,
+			  0 0 1  0,
 			  0 0 1  0,
 			  0 0 1  0,
 			  0 0 1  0,
@@ -52682,9 +52718,13 @@ DEF Anigroup-1-Intrp20-rotation OrientationInterpolator {
 ROUTE Anigroup-1-TIMER.fraction_changed TO Anigroup-1-Intrp20-rotation.set_fraction
 ROUTE Anigroup-1-Intrp20-rotation.value_changed TO Anigroup-1-Intrp18-transform.set_rotation
 DEF Anigroup-1-Intrp22-scale PositionInterpolator {
-	key	[ 0, 0.678941, 0.719218, 0.759493,
-			  0.79977, 0.838896, 0.879171, 0.919448 ]
+	key	[ 0, 0.439586, 0.559839, 0.678941,
+			  0.679517, 0.719218, 0.759493, 0.79977,
+			  0.838896, 0.879171, 0.919448 ]
 	keyValue	[ 1.5 1 1.5,
+			  1.5 1 1.5,
+			  1.5 1 1.5,
+			  1.5 1 1.5,
 			  1.5 1 1.5,
 			  1.5 1 1.5,
 			  1.5 1 1.5,
@@ -52696,26 +52736,60 @@ DEF Anigroup-1-Intrp22-scale PositionInterpolator {
 ROUTE Anigroup-1-TIMER.fraction_changed TO Anigroup-1-Intrp22-scale.set_fraction
 ROUTE Anigroup-1-Intrp22-scale.value_changed TO Anigroup-1-Intrp18-transform.set_scale
 DEF Anigroup-1-Intrp24-translation PositionInterpolator {
-	key	[ 0, 0.879171, 0.919448 ]
+	key	[ 0, 0.439586, 0.559839, 0.679517,
+			  0.879171, 0.919448 ]
 	keyValue	[ 0.168 0 1.7001,
+			  0.168 0 1.7001,
+			  0.168 0 1.7001,
+			  0.168 0 1.7001,
 			  0.168 0 1.7001,
 			  0.168 0 1.7001 ]
 }
 ROUTE Anigroup-1-TIMER.fraction_changed TO Anigroup-1-Intrp24-translation.set_fraction
 ROUTE Anigroup-1-Intrp24-translation.value_changed TO Anigroup-1-Intrp24-transform.set_translation
 DEF Anigroup-1-Intrp26-rotation OrientationInterpolator {
-	key	[ 0, 0.879171, 0.919448 ]
+	key	[ 0, 0.439586, 0.559839, 0.679517,
+			  0.879171, 0.919448 ]
 	keyValue	[ 0 0 1  0,
+			  0 0 1  0,
+			  0 0 1  0,
+			  0 0 1  0,
 			  0 0 1  0,
 			  0 0 1  0 ]
 }
 ROUTE Anigroup-1-TIMER.fraction_changed TO Anigroup-1-Intrp26-rotation.set_fraction
 ROUTE Anigroup-1-Intrp26-rotation.value_changed TO Anigroup-1-Intrp24-transform.set_rotation
 DEF Anigroup-1-Intrp28-scale PositionInterpolator {
-	key	[ 0, 0.879171, 0.919448 ]
+	key	[ 0, 0.439586, 0.559839, 0.679517,
+			  0.879171, 0.919448 ]
 	keyValue	[ 1 1 1,
+			  1 1 1,
+			  1 1 1,
+			  1 1 1,
 			  1 1 1,
 			  1 1 1 ]
 }
 ROUTE Anigroup-1-TIMER.fraction_changed TO Anigroup-1-Intrp28-scale.set_fraction
 ROUTE Anigroup-1-Intrp28-scale.value_changed TO Anigroup-1-Intrp24-transform.set_scale
+DEF Anigroup-1-Intrp13-position PositionInterpolator {
+	key	[ 0, 0.439586, 0.559839, 0.679517,
+			  1 ]
+	keyValue	[ -24.8679 14.4166 40.2089,
+			  -15.3244 10.3037 45.8791,
+			  -13.2903 9.4271 47.0876,
+			  -26.5513 19.3622 50.0179,
+			  -0.967875 4.11658 54.4089 ]
+}
+ROUTE Anigroup-1-TIMER.fraction_changed TO Anigroup-1-Intrp13-position.set_fraction
+ROUTE Anigroup-1-Intrp13-position.value_changed TO Anigroup-1-Intrp13-Viewpoint.set_position
+DEF Anigroup-1-Intrp16-orientation OrientationInterpolator {
+	key	[ 0, 0.439586, 0.559839, 0.679517,
+			  1 ]
+	keyValue	[ 0 0 1  0.0314177,
+			  0 0 1  0.0188733,
+			  0 0 1  0.0161945,
+			  0 0 1  0.0132468,
+			  0 0 1  0 ]
+}
+ROUTE Anigroup-1-TIMER.fraction_changed TO Anigroup-1-Intrp16-orientation.set_fraction
+ROUTE Anigroup-1-Intrp16-orientation.value_changed TO Anigroup-1-Intrp13-Viewpoint.set_orientation
