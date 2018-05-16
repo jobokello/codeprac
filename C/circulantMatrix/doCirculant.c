@@ -76,7 +76,7 @@ int main(int argc, char const *argv[])
 {
 	int n;
 
-	printf("enter the size of the nxn matrix\n");
+	printf("Please enter the size of the nxn matrix\n");
 	scanf("%d", &n);
 
 	doCirculant(n);
