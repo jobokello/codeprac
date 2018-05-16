@@ -69,6 +69,6 @@ def main():
 		predictions.append(result)
 		print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
 	accuracy = getAccuracy(testSet, predictions)
-	print('Accuracy: ' + repr(accuracy) + '%')
+	print('The accuracy is:' + repr(accuracy) + '%')
 	
 main()
