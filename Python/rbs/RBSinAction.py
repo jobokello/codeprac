@@ -1,10 +1,4 @@
 
-'''
-Innocent Kithinji
-P15/36469/2016
-Run the Runserver Fast before running this.
-'''
-
 from ClientClass import Client
 
 

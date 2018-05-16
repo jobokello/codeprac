@@ -1,9 +1,4 @@
 
-'''
-Innocent Kithinji
-P15/36469/2016
-'''
-
 from ServerClass import Server
 
 print('Setting up Server')

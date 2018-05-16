@@ -1,11 +1,4 @@
--
--'''
--Innocent Kithinji
--job okello borrowed
--P15/36469/2016
-assigmnent ya DS sem 5 for the first week
--'''
--
+
 from xmlrpc.client import ServerProxy
 from datetime import datetime
 

@@ -1,9 +1,4 @@
 
-'''
-Innocent Kithinji
-P15/36469/2016
-'''
-
 from xmlrpc.server import SimpleXMLRPCServer, SimpleXMLRPCRequestHandler
 
 
@@ -13,11 +8,6 @@ class RequestHandler(SimpleXMLRPCRequestHandler):
 class Server(object):
     server = None
     time_list = []
-
-    '''
-    XMLRPC Simple Server Class. Creates Server for RBS clock synchronization.
-    Innocent Kithinji. P15/36496/2016
-    '''
 
     def __init__(self):
         self.server = SimpleXMLRPCServer(('localhost', 4444), requestHandler=RequestHandler)
