@@ -22,19 +22,12 @@ void main()
    int i,j,k=1,l=1;
    int retMatSize;
    
-
-   /*printf("Please enter a string you wish to have reversed\n=> :");//prompts entry of string to be reversed
-   scanf("%s",buffer);*/
-
-  
-
    server.sin_family = AF_INET;
    server.sin_port = 2000;
    server.sin_addr.s_addr = inet_addr("127.0.0.1");// server ip address
    sock = socket(AF_INET,SOCK_STREAM, 0);
 
    connect(sock, (struct sockaddr*) &server, sizeof(server));
-   //send(sock, buffer, sizeof(buffer), 0);//sends string to the server
 
    printf("enter matrix size\n");
    scanf("%d", &matSize);
@@ -47,9 +40,13 @@ void main()
       printf("%d ", myVector[i]);
       k++;
    }
+
    printf("]\n");
+
    send(sock, &matSize, sizeof(int) , 0);
+
    send(sock, &myVector, matSize*sizeof(int) , 0);//sends string to the server
+
    recv(sock, circulantMatrix, (matSize*matSize)*sizeof(int), 0);// receives reversed string from the server
 
    retMatSize = matSize*matSize;
@@ -65,8 +62,4 @@ void main()
       }
       l++;
    }
-
-
-   //printf("Your string was reverse as follows\n=>: %d",circulantMatrix[0]); //prints out the reversed string from the server
-   //printf("\n");
 }

@@ -37,22 +37,6 @@ void main()
    n = sizeof(client);
    newsock = accept(sock, (struct sockaddr*) &client, &n);
 
-   //reverses the received string
-   /*for(;;)
-   {
-      recv(newsock, buffer, sizeof(buffer), 0);
-      i = 0; 
-      j = strlen(buffer) - 1;
-      while(i<j)
-      { 
-         temp = buffer[i]; 
-         buffer[i] = buffer[j]; 
-         buffer[j] = temp; 
-         i++; 
-         j--;
-       }
-   send(newsock, buffer, sizeof(buffer), 0);//sends back the reversed string to the client
-   }*/
    recv(newsock, &matSize, sizeof(int), 0);
 
    printf("size = %d\n", matSize);
@@ -82,9 +66,11 @@ void main()
       printf("\n");
    }
 
+   printf("\n\n");
+
    for(i=matSize-1; i>-1; i--)
    {
-      for(k=i; k>-1; k--)
+      for(k=i; k>0; k--)
       {
          tempHolder = matrix[i][matSize-1];
          for(j=matSize-1; j>0; j--)
@@ -94,16 +80,7 @@ void main()
          }
          matrix[i][0] = tempHolder;
          printf("\n");
-         /*for(x=0; x<n; x++)
-         {
-            for(y=0; y<n; y++)
-            {
-
-               printf("%d\t",matrix[x][y]);
-            }
-            printf("\n");
-         }*/
-         //printf("\n");
+        
       }
       printf("\n\n");
    }

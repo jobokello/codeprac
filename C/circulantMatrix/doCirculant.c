@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void doCirculant(int n)
+void doCirculant(int c)
 {
 	int i, j, k,l,x,y,populate = 1;
 	int tempHolder;
-	int matrix[n][n];
-	int circulantMatrix[n][n];
+	char matrix[c][c];
+	int circulantMatrix[c][c];
 
-	for(i=0; i<n; i++)
+	for(i=0; i<c; i++)
 	{
 		populate = 1;
-		for(j=0; j<n; j++)
+		for(j=0; j<c; j++)
 		{
 			matrix[i][j] = populate;
 			populate++;
@@ -20,9 +20,9 @@ void doCirculant(int n)
 
 	printf("the original matrix is:\n\n");
 
-	for(i=0; i<n; i++)
+	for(i=0; i<c; i++)
 	{
-		for(j=0; j<n; j++)
+		for(j=0; j<c; j++)
 		{
 
 			printf("%d\t", matrix[i][j]);
@@ -30,12 +30,12 @@ void doCirculant(int n)
 		printf("\n");
 	}
 	printf("\n\n");
-	for(i=n-1; i>-1; i--)
+	for(i=c-1; i>-1; i--)
 	{
-		for(k=i; k>-1; k--)
+		for(k=i; k>0; k--)
 		{
-			tempHolder = matrix[i][n-1];
-			for(j=n-1; j>0; j--)
+			tempHolder = matrix[i][c-1];
+			for(j=c-1; j>0; j--)
 			{
 				matrix[i][j] = matrix[i][j-1];
 				printf("[%d][%d]=[%d][%d]\t", i,j,i,j-1);
@@ -58,9 +58,9 @@ void doCirculant(int n)
 
 	printf("\nthe new matrix is:\n\n\n");
 
-	for(i=0; i<n; i++)
+	for(i=0; i<c; i++)
 	{
-		for(j=0; j<n; j++)
+		for(j=0; j<c; j++)
 		{
 
 			printf("%d\t",matrix[i][j]);
@@ -76,7 +76,7 @@ int main(int argc, char const *argv[])
 {
 	int n;
 
-	printf("Please enter the size of the nxn matrix\n");
+	printf("enter the size of the nxn matrix\n");
 	scanf("%d", &n);
 
 	doCirculant(n);
