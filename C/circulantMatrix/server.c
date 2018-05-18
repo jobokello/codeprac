@@ -1,116 +1,125 @@
-/****************** SERVER CODE ****************/
+//Name    : Okello Job Opiyo
+//Reg no.: P15/37353/2016
 
-#include <stdio.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <string.h>
+//server code
 #include<stdio.h>
 #include<sys/socket.h>
 #include<netinet/in.h>
 #include<sys/types.h>
-#include<netdb.h>
 #include<string.h>
 #include<stdlib.h>
 #include<unistd.h>
+#include<netdb.h>
 #include<arpa/inet.h>
 
-// Server side C/C++ program to demonstrate Socket programming
-#include <unistd.h>
-#include <stdio.h>
-#include <sys/socket.h>
-#include <stdlib.h>
-#include <netinet/in.h>
-#include <string.h>
-#define PORT 8080
-int main(int argc, char const *argv[])
-{
-    int server_fd, new_socket, valread;
-    struct sockaddr_in address;
-    int opt = 1;
-    int addrlen = sizeof(address);
-    char buffer[1024] = {0};
-    char *hello = "Hello from server";
-      
-    // Creating socket file descriptor
-    if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0)
-    {
-        perror("socket failed");
-        exit(EXIT_FAILURE);
-    }
-      
-    // Forcefully attaching socket to the port 8080
-    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT,
-                                                  &opt, sizeof(opt)))
-    {
-        perror("setsockopt");
-        exit(EXIT_FAILURE);
-    }
-    address.sin_family = AF_INET;
-    address.sin_addr.s_addr = INADDR_ANY;
-    address.sin_port = htons( PORT );
-      
-    // Forcefully attaching socket to the port 8080
-    if (bind(server_fd, (struct sockaddr *)&address, 
-                                 sizeof(address))<0)
-    {
-        perror("bind failed");
-        exit(EXIT_FAILURE);
-    }
-    if (listen(server_fd, 3) < 0)
-    {
-        perror("listen");
-        exit(EXIT_FAILURE);
-    }
-    if ((new_socket = accept(server_fd, (struct sockaddr *)&address, 
-                       (socklen_t*)&addrlen))<0)
-    {
-        perror("accept");
-        exit(EXIT_FAILURE);
-    }
-    valread = read( new_socket , buffer, 1024);
-    printf("%s\n",buffer );
-    send(new_socket , hello , strlen(hello) , 0 );
-    printf("Hello message sent\n");
-    return 0;
-}
+void main()
+{ 
+   struct sockaddr_in server, client;
+   char buffer[60], temp; //holds the string
+   int n, sock, newsock, i, j, k, x = 0;
+   int matSize;
+   int populate;
+   int myVector[1000];
+   int matrix[1000][1000];
+   int circulantMatrix[1000];
+   int tempHolder;
 
-int main(){
-  int welcomeSocket, newSocket;
-  char buffer[1024];
-  struct sockaddr_in serverAddr;
-  struct sockaddr_storage serverStorage;
-  socklen_t addr_size;
+   printf("listening...\n");
 
-  /*---- Create the socket. The three arguments are: ----*/
-  /* 1) Internet domain 2) Stream socket 3) Default protocol (TCP in this case) */
-  welcomeSocket = socket(PF_INET, SOCK_STREAM, 0);
-  
-  /*---- Configure settings of the server address struct ----*/
-  /* Address family = Internet */
-  serverAddr.sin_family = AF_INET;
-  /* Set port number, using htons function to use proper byte order */
-  serverAddr.sin_port = htons(7891);
-  /* Set IP address to localhost */
-  serverAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
-  /* Set all bits of the padding field to 0 */
-  memset(serverAddr.sin_zero, '\0', sizeof serverAddr.sin_zero);  
+   sock = socket(AF_INET, SOCK_STREAM, 0);
+   server.sin_family = AF_INET;
+   server.sin_port = 2000;
+   server.sin_addr.s_addr = inet_addr("127.0.0.1");
+   bind(sock, (struct sockaddr*) &server, sizeof(server));
 
-  /*---- Bind the address struct to the socket ----*/
-  bind(welcomeSocket, (struct sockaddr *) &serverAddr, sizeof(serverAddr));
+   //creates the connection between the server and the client
+   listen(sock, 2);
+   n = sizeof(client);
+   newsock = accept(sock, (struct sockaddr*) &client, &n);
 
-  /*---- Listen on the socket, with 5 max connection requests queued ----*/
-  if(listen(welcomeSocket,5)==0)
-    printf("Listening\n");
-  else
-    printf("Error\n");
+   //reverses the received string
+   /*for(;;)
+   {
+      recv(newsock, buffer, sizeof(buffer), 0);
+      i = 0; 
+      j = strlen(buffer) - 1;
+      while(i<j)
+      { 
+         temp = buffer[i]; 
+         buffer[i] = buffer[j]; 
+         buffer[j] = temp; 
+         i++; 
+         j--;
+       }
+   send(newsock, buffer, sizeof(buffer), 0);//sends back the reversed string to the client
+   }*/
+   recv(newsock, &matSize, sizeof(int), 0);
 
-  /*---- Accept call creates a new socket for the incoming connection ----*/
-  addr_size = sizeof serverStorage;
-  newSocket = accept(welcomeSocket, (struct sockaddr *) &serverStorage, &addr_size);
+   printf("size = %d\n", matSize);
 
-  /*---- Send message to the socket of the incoming connection ----*/
-  strcpy(buffer,"Hello World\n");
-  send(newSocket,buffer,13,0);
+   recv(newsock, &myVector, matSize*sizeof(int), 0);
 
-  return 0;
+   printf("the received vector is: [");
+
+   for(i=0; i<matSize; i++)
+   {
+      printf("%d  ", myVector[i]);
+   }
+
+   printf("]\n");
+
+
+   printf("size = %d\nThe generated matrix is:\n", matSize);
+
+   for(i=0; i<matSize; i++)
+   {
+      populate = 1;
+      for(j=0; j<matSize; j++)
+      {
+         matrix[i][j] = myVector[j];
+         printf("%d\t", matrix[i][j]);
+      }
+      printf("\n");
+   }
+
+   for(i=matSize-1; i>-1; i--)
+   {
+      for(k=i; k>-1; k--)
+      {
+         tempHolder = matrix[i][matSize-1];
+         for(j=matSize-1; j>0; j--)
+         {
+            matrix[i][j] = matrix[i][j-1];
+            printf("[%d][%d]=[%d][%d]\t", i,j,i,j-1);
+         }
+         matrix[i][0] = tempHolder;
+         printf("\n");
+         /*for(x=0; x<n; x++)
+         {
+            for(y=0; y<n; y++)
+            {
+
+               printf("%d\t",matrix[x][y]);
+            }
+            printf("\n");
+         }*/
+         //printf("\n");
+      }
+      printf("\n\n");
+   }
+
+   printf("\nthe new matrix is:\n\n\n");
+
+   for(i=0; i<matSize; i++)
+   {
+      for(j=0; j<matSize; j++)
+      {
+         printf("%d\t",matrix[i][j]);
+         circulantMatrix[x] = matrix[i][j];
+         x++;
+      }
+      printf("\n");
+   }
+
+   send(newsock, &circulantMatrix, (matSize*matSize)*sizeof(int), 0);//sends back the reversed string to the client
 }
