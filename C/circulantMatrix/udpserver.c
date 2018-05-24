@@ -1,4 +1,7 @@
-// Server side implementation of UDP client-server model
+//Name   : Okello Job Opiyo
+//Reg no.: P15/37353/2016
+
+//Server side implementation of UDP client-server model
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

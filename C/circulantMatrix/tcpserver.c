@@ -1,8 +1,7 @@
 //Name    : Okello Job Opiyo
 //Reg no.: P15/37353/2016
 
-//server code
-#include<stdio.h>
+//Server side implementation of TCP client-server model#include<stdio.h>
 #include<sys/socket.h>
 #include<netinet/in.h>
 #include<sys/types.h>

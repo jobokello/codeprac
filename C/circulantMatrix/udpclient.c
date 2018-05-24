@@ -1,3 +1,6 @@
+//Name   : Okello Job Opiyo
+//Reg no.: P15/37353/2016
+
 // Client side implementation of UDP client-server model
 #include <stdio.h>
 #include <stdlib.h>
