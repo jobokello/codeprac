@@ -42,6 +42,16 @@ void doCirculant(int c)
 			}
 			matrix[i][0] = tempHolder;
 			printf("\n");
+			/*for(x=0; x<n; x++)
+			{
+				for(y=0; y<n; y++)
+				{
+
+					printf("%d\t",matrix[x][y]);
+				}
+				printf("\n");
+			}*/
+			//printf("\n");
 		}
 		printf("\n\n");
 	}
