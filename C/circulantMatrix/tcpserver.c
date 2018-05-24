@@ -15,16 +15,14 @@
 void main()
 { 
    struct sockaddr_in server, client;
-   char buffer[60], temp; //holds the string
    int n, sock, newsock, i, j, k, x = 0;
    int matSize;
-   int populate;
    int myVector[1000];
    int matrix[1000][1000];
    int circulantMatrix[1000];
    int tempHolder;
 
-   printf("listening...\n");
+  printf("***************************\nTCP server listening....\n***************************\n");
 
    sock = socket(AF_INET, SOCK_STREAM, 0);
    server.sin_family = AF_INET;
@@ -57,7 +55,6 @@ void main()
 
    for(i=0; i<matSize; i++)
    {
-      populate = 1;
       for(j=0; j<matSize; j++)
       {
          matrix[i][j] = myVector[j];
@@ -79,8 +76,7 @@ void main()
             printf("[%d][%d]=[%d][%d]\t", i,j,i,j-1);
          }
          matrix[i][0] = tempHolder;
-         printf("\n");
-        
+         printf("\n");  
       }
       printf("\n\n");
    }

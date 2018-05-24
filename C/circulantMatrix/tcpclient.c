@@ -21,6 +21,8 @@ void main()
    int circulantMatrix[1000];
    int i,j,k=1,l=1;
    int retMatSize;
+
+   printf("***************************\nTCP Client started....\n***************************\n");
    
    server.sin_family = AF_INET;
    server.sin_port = 2000;
@@ -41,7 +43,7 @@ void main()
       k++;
    }
 
-   printf("]\n");
+   printf("]\n\n\n");
 
    send(sock, &matSize, sizeof(int) , 0);
 
@@ -51,7 +53,7 @@ void main()
 
    retMatSize = matSize*matSize;
 
-   printf("the circulantMatrix is:\n");
+   printf("the circulantMatrix is:\n\n");
 
    for(i=0; i<retMatSize; i++)
    {
