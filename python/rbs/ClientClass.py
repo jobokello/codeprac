@@ -83,4 +83,4 @@ class Client():
 
         self.time = '{}:{}:{}'.format(new_Hour,new_Min, new_Sec)
 
-        print('{}\'s new time is {}'.format(self.name, self.time))
+        print('{}\'s New time is {}'.format(self.name, self.time))
