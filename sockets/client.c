@@ -1,4 +1,4 @@
-// Client side C/C++ program to demonstrate Socket programming using TCP
+// Client side C/C++ program to demonstrate Socket programming using TCP jobs
 #include <stdio.h>
 #include <sys/socket.h>
 #include <stdlib.h>
