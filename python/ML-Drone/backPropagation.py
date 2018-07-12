@@ -32,7 +32,7 @@ class Neural_Network(object):
         return 1/(1+np.exp(-s))
     
     #derivative of sigmoid
-    def sigmoidPrime(self, s):
+    def sigmoidPrime():
         return s * (1 -s)
     
     #backward propagation function
