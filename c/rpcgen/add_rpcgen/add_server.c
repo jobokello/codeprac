@@ -10,6 +10,9 @@ int *
 add_1_svc(numbers *argp, struct svc_req *rqstp)
 {
 	static int  result;
+	int i;
+	int matSize;
+	
 
 	/*
 	 * insert server code here
