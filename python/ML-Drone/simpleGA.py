@@ -2,6 +2,7 @@ from fuzzywuzzy import fuzz
 import string
 import random
 
+#define characteristics of each agent
 class Agent(object):
 
 	def __init__(self, length):
@@ -10,14 +11,15 @@ class Agent(object):
 		self.fitness = -1
 
 	def __str__(self):
-		
+
 		return 'Generated String  ' + str(self.string) + ' Fitness to target string  = ' + str(self.fitness) + '%'
 
 in_str = None
 in_str_len = None
 population = 26
-generations = 10000
+generations = 1000
 
+#initilaise the agents
 def ga():
 	agents = init_agents(population, in_str_len)
 
@@ -29,19 +31,21 @@ def ga():
 		agents = crossover(agents)
 		agents = mutation(agents)
 
-		if any(agent.fitness >= 90 for agent in agents):
+		if any(agent.fitness >= 70 for agent in agents):
 			print 'Threshold Met'
 			exit(0)
 
 def init_agents(population,length):
 	return [Agent(length) for _ in xrange(population)]
 
+#get the fitness of each generated string to the target string
 def fitness(agents):
 	for agent in agents:
 		agent.fitness = fuzz.ratio(agent.string, in_str)
 
 	return agents
 
+#pic the best string instance from the generated strings
 def selection(agents):
 	agents = sorted(agents, key=lambda agent: agent.fitness, reverse = True) 
 	print '\n' .join(map(str, agents))
@@ -49,7 +53,7 @@ def selection(agents):
 
 	return agents
 
-
+#crossover the best current fitness to come up with the new best children
 def crossover(agents):
 
 	offspring = []
@@ -85,7 +89,7 @@ def mutation(agents):
 
 	return agents
 
-
+#get input string to be worked on
 if __name__ == '__main__':
 	in_str = 'job'
 	in_str_len = len(in_str)
