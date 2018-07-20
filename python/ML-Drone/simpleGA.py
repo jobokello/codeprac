@@ -19,7 +19,7 @@ class Agent(object):
 
 	def __str__(self):
 
-		return 'Generated String  ' + str(self.string) + ' Fitness to target string  = ' + str(self.fitness) + '%'
+		return 'Generated String  ' + str(self.string) + ' Fitness to target string ' + in_str +  ' = ' + str(self.fitness) + '%'
 
 in_str = None
 in_str_len = None
@@ -98,7 +98,7 @@ def mutation(agents):
 
 #get input string to be worked on
 if __name__ == '__main__':
-	in_str = 'job'
+	in_str = 'ghgbrhj'
 	in_str_len = len(in_str)
 	ga()
 
