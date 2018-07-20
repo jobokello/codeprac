@@ -1,0 +1,10 @@
+/dns
+/mq
+/pipes
+/signals
+/sm
+/doCirculant/dc
+/doCirculant/tcp/client
+/doCirculant/tcp/server
+/doCirculant/udp/client
+/doCirculant/udp/server
