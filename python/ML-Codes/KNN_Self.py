@@ -1,9 +1,4 @@
 
-# coding: utf-8
-
-# In[21]:
-
-
 '''
 Okello Job Opiyo
 Reg no. P15/37353/2016
@@ -51,10 +46,4 @@ print(result)
 [[plt.scatter(ii[0],ii[1], s=50, color=i) for ii in dataset[i]] for i in dataset]
 plt.scatter(new_data[0], new_data[1], marker ='*', s=150, color = result)
 plt.show()
-
-
-# In[ ]:
-
-
-nd
 
