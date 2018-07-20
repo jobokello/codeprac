@@ -21,10 +21,10 @@ docirculant_1_svc(myVector *argp, struct svc_req *rqstp)
 
 	printf("the received vector is: [");
 
-	for (int i = 0; i < matSize; ++i)
-	{
-		myVector[i] = i;
-	}
+   	for (int i = 0; i < matSize ; ++i)
+   	{
+   		myVector[i] = i + 1;
+   	}
 
    	for(i=0; i<matSize; i++)
    	{
