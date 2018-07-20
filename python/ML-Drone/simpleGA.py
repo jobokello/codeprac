@@ -1,3 +1,10 @@
+'''
+Reg no. P15/37353/2016
+Job Opiyo Okello
+Genetic Algorithm
+
+String Matching Genetic algorithm
+'''
 from fuzzywuzzy import fuzz
 import string
 import random
