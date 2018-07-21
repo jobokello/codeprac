@@ -24,7 +24,7 @@ class Agent(object):
 in_str = None
 in_str_len = None
 population = 26
-generations = 1000
+generations = 1000000
 
 #initilaise the agents
 def ga():
@@ -38,7 +38,7 @@ def ga():
 		agents = crossover(agents)
 		agents = mutation(agents)
 
-		if any(agent.fitness >= 70 for agent in agents):
+		if any(agent.fitness >= 80 for agent in agents):
 			print 'Threshold Met'
 			exit(0)
 
@@ -98,7 +98,7 @@ def mutation(agents):
 
 #get input string to be worked on
 if __name__ == '__main__':
-	in_str = 'ghgbrhj'
+	in_str = 'dron'
 	in_str_len = len(in_str)
 	ga()
 
