@@ -6,16 +6,19 @@
 
 #include "circulant.h"
 
+
 int *
 docirculant_1_svc(myVector *argp, struct svc_req *rqstp)
 {
 	static int  result;
 	int matSize;
-	int i,j,k,x=0;
+	int i,j,k,m,n,x=0;
 	int tempHolder;
 	int circulantMatrix[1000];
 	int matrix[1000][1000];
 	int myVector[1000];
+   long arrayToInt = 0;
+   int newMatsize;
 
 	matSize = argp->vectSize;
 
@@ -76,6 +79,7 @@ docirculant_1_svc(myVector *argp, struct svc_req *rqstp)
       	}
       	printf("\n");
    	}
+
 
 	return &result;
 
