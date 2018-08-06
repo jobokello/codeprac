@@ -8,6 +8,7 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 
+//structure of the memory queue
 struct mesg_buffer
 {
 	long mesg_type;
@@ -16,18 +17,20 @@ struct mesg_buffer
 
 void progFork(int progForkNum)
 {
-	pid_t pid;
+	pid_t pid;//Process IDs
 
 
-	key_t key = ftok("mQfile", 9972);
-	int msgid = msgget(key, IPC_CREAT|0666);
-	char queuedMessage[2048];
+	key_t key = ftok("mQfile", 9972);//get unique key
+
+	int msgid = msgget(key, IPC_CREAT|0666);//get message queue identifier for new message or exist memeory content
+
+	char queuedMessage[2048];//stores message to be shared
 
 	int rc;
 	struct msqid_ds buf;
-	int queuedMessageTotal;
+	int queuedMessageTotal;//message counter
 
-	pid = fork();
+	pid = fork();//create child process
 
 	if (progForkNum > 0)
 	{
@@ -44,7 +47,8 @@ void progFork(int progForkNum)
 
 			if (queuedMessageTotal > 0)
 			{
-				msgrcv(msgid, &message, sizeof(message), 1, 0);
+				msgrcv(msgid, &message, sizeof(message), 1, 0);//get message from the queue
+
 				printf("Process %d received the following message via the Queue:  %s\n",getpid(), message.mesg_text);
 			}
 			else
@@ -83,7 +87,7 @@ void progFork(int progForkNum)
 		}
 	}
 
-	msgctl(msgid, IPC_RMID,NULL);	
+	msgctl(msgid, IPC_RMID,NULL);//destroy queue	
 }
 
 int main(int argc, char const *argv[])

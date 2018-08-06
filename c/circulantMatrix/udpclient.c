@@ -17,8 +17,8 @@
 // Driver code
 int main() {
     int sockfd;
-    char buffer[MAXLINE];
-    char *hello = "Hello from client";
+    //char buffer[MAXLINE];
+    //char *hello = "Hello from client";
     struct sockaddr_in servaddr;
     int matSize;
     int myVector[1000];

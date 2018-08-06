@@ -11,15 +11,17 @@
 
 void progFork(int childProcNum)
 {
-	pid_t pid;
+	pid_t pid;//process ID
 
+	key_t key = ftok("shmFile", 9876);//generate unique key for shared memory
 
-	key_t key = ftok("shmFile", 9876);
-	int shmid = shmget(key, SHMSIZE, IPC_CREAT|0666);
+	int shmid = shmget(key, SHMSIZE, IPC_CREAT|0666);//get identifier for the shared memory segment(memory ID)
+
 	char *msg = (char*) shmat(shmid, (void*)0, 0);
-	char sharedMessage[2048];
 
-	pid = fork();
+	char sharedMessage[2048];//message
+
+	pid = fork();//create child process
 
 	if (childProcNum > 0)
 	{
@@ -40,10 +42,12 @@ void progFork(int childProcNum)
 				printf("Process %d will be the first to write into the shared memory\n",getpid());
 			}
 
+			//add new content into the memory
 			printf("Enter new message into the memory: ");
 
 			fgets(sharedMessage,256,stdin);
 
+			//append new string to the existent string shared memory content
 			if ((strlen(sharedMessage) > 0) && (sharedMessage[strlen(sharedMessage) - 1] == '\n'))
 			{
 				sharedMessage[strlen(sharedMessage) - 1] = '\0';
@@ -58,7 +62,7 @@ void progFork(int childProcNum)
 				printf("\n");
 			}
 
-			shmdt(msg); 
+			shmdt(msg);//detach from the shared memory after wrting into it 
 
 			exit(0);
 
@@ -71,7 +75,7 @@ void progFork(int childProcNum)
 		}
 	}
 
-	shmctl(shmid,IPC_RMID, 0);
+	shmctl(shmid,IPC_RMID, 0);//destroy the shared memory after all processes have communicated
 }
 
 int main(int argc, char const *argv[])

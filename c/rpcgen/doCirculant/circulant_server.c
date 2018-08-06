@@ -77,7 +77,7 @@ docirculant_1_svc(myVector *argp, struct svc_req *rqstp)
          	circulantMatrix[x] = matrix[i][j];
          	x++;
       	}
-      	printf("\n");
+      	printf("\n");z
    	}
 
 

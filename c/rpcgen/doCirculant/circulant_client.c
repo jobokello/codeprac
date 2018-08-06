@@ -48,7 +48,7 @@ circulant_prog_1(char *host)
 	}
 	else
 	{
-		printf("The circulant was generated succesfully by the server!!!\n");
+		printf("The circulant was generated succesfully by the server!!!\n");z
 	}
 #ifndef	DEBUG
 	clnt_destroy (clnt);
