@@ -33,9 +33,10 @@ void doCirculant(int c)
 		printf("\n");
 	}
 	printf("\n\n");
+
 	for(i=c-1; i>-1; i--)
 	{
-		for(k=i; k>0; k--)
+		for(k=i; k>-1; k--)
 		{
 			tempHolder = matrix[i][c-1];
 			for(j=c-1; j>0; j--)
