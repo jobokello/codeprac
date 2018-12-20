@@ -87,6 +87,16 @@ int main(void)
 	int decryptednumbers[1024];
 	int i,j,k,l;
 
+	p = 5;
+	q = 11;
+	e = 7;
+
+	n = p * q;
+
+	phi = (p-1)*(q-1);
+
+	printf("n is: %d\nphi is: %d\n", n, phi);
+
 	printf("enter a string to encrypt:\n");
 	scanf("%s", plaintext);
 	strlenghth = strlen(plaintext);
@@ -104,25 +114,31 @@ int main(void)
 	{
 		printf(" %d", plaintextToNum[i]); 
 	}
+	printf("\n");
 
 	//encryptiption
 	for(i=0; i < strlenghth; i++)
 	{
-		encryptednumbers[i] = pow(plaintextToNum[i],); 
+		int mPowerE = (pow(plaintextToNum[i],e));
+		encryptednumbers[i] = mPowerE % n; 
 	}
 
-	printf("the ecryption is: \n"); 
+	printf("the ecryption is: ");
 
+	for(i=0; i < strlenghth; i++)
+	{
+		printf(" %d", encryptednumbers[i]); 
+	}
 	printf("\n");
 
-	p = 5;
-	q = 11;
-	e = 7;
+	//decryptiption
+	/*
+	for(i=0; i < strlenghth; i++)
+	{
+		int mPowerE = (pow(plaintextToNum[i],e));
+		encryptednumbers[i] = mPowerE % n; 
+	}*/
 
-	n = p * q;
-	phi = (p-1)*(q-1);
-
-	printf("n is: %d\nphi is: %d\n", n, phi);
 
 	d = getD(phi,e,row1Start);
 
