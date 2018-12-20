@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
+#include <math.h>
 
 int getD(int myPhi,int myE,int row1Start)
 {
@@ -77,11 +78,42 @@ int main(void)
 	int x;
 	int det;
 	int row1Start = 1;
-
+	int diglet;
 	char letter;
-	printf("enter a letter:\n");
-	scanf("%c", &letter);
-	printf("the letter numebr equivalent is %c \n", c_to_n(letter));
+	int strlenghth;
+	char plaintext[1024];
+	int plaintextToNum[1024];
+	int encryptednumbers[1024];
+	int decryptednumbers[1024];
+	int i,j,k,l;
+
+	printf("enter a string to encrypt:\n");
+	scanf("%s", plaintext);
+	strlenghth = strlen(plaintext);
+	printf("size of the string is %d\n", strlenghth);
+
+	//convert string into number
+	for(i=0; i < strlenghth; i++)
+	{
+		plaintextToNum[i] = c_to_n(plaintext[i]); 
+	}
+
+	printf("the numbers converted are: \n");
+
+	for(i=0; i < strlenghth; i++)
+	{
+		printf(" %d", plaintextToNum[i]); 
+	}
+
+	//encryptiption
+	for(i=0; i < strlenghth; i++)
+	{
+		encryptednumbers[i] = pow(plaintextToNum[i],); 
+	}
+
+	printf("the ecryption is: \n"); 
+
+	printf("\n");
 
 	p = 5;
 	q = 11;
@@ -94,9 +126,7 @@ int main(void)
 
 	d = getD(phi,e,row1Start);
 
-	printf("enter a letter:\n");
-	scanf("%c", &letter);
-	printf("the letter numebr equivalent is %d \n", c_to_n(letter));
+	
 
 	printf("d is %d\n", d);
 }
