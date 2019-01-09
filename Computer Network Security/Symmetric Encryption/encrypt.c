@@ -1,3 +1,10 @@
+/*
+Okello Job Opiyo
+P15/37353/2016
+CSC 411
+Symmetric encryption
+*/
+//C client code 
 // Cient side code 
 #include <netinet/in.h> 
 #include <stdio.h> 
@@ -11,9 +18,12 @@
 
 char buf[1024];
 
-char *mygets(char *buf, size_t size) {
-    if (buf != NULL && size > 0) {
-        if (fgets(buf, size, stdin)) {
+char *mygets(char *buf, size_t size) 
+{
+    if (buf != NULL && size > 0) 
+    {
+        if (fgets(buf, size, stdin)) 
+        {
             buf[strcspn(buf, "\n")] = '\0';
             return buf;
         }
@@ -45,21 +55,21 @@ int main()
 
 	addr_size = sizeof serverAddr; 
 
-	while (1) { 
+	while (1) 
+	{ 
 		printf("Enter file name for the message you wish to encrypt: \n"); 
-		//fgets(path);
 		mygets(path, sizeof path); 
 
 		// printf("%s\n", path); 
 		FILE* fp; 
 		fp = fopen(path, "r");
 
-		if (fp) {
+		if (fp) 
+		{
 
 			printf("The plain text is:  \n");
 		    while (fscanf(fp, "%s", str)!=EOF)
 		        printf(" %s",str);
-		    //fclose(fp);
 		}
 
 		printf("\n");
@@ -72,13 +82,14 @@ int main()
 		size_t file_size = ftell(fp); 
 		fseek(fp, 0, SEEK_SET); 
 
-		if (fread(file_buffer, file_size, 1, fp) <= 0) { 
+		if (fread(file_buffer, file_size, 1, fp) <= 0) 
+		{ 
 			printf("unable to copy file into buffer\n"); 
 			exit(1); 
 		} 
 
-		if (sendto(clientSocket, file_buffer, 3000, 0, (struct sockaddr*)&serverAddr, 
-																	addr_size) < 0) { 
+		if (sendto(clientSocket, file_buffer, 3000, 0, (struct sockaddr*)&serverAddr,addr_size) < 0) 
+		{ 
 			printf("error in sending the file\n"); 
 			exit(1); 
 		} 

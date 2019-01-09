@@ -1,3 +1,11 @@
+/*
+Okello Job Opiyo
+P15/37353/2016
+CSC 411
+RSA encryption
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -13,6 +21,7 @@ int standardPhi(int phi)
 	printf("standard Phi is: %d\n", statPhi);
 }
 
+//extended euclidian 
 int getD(int myPhi,int myE,int row1Start)
 {
 
@@ -96,14 +105,10 @@ int getD(int myPhi,int myE,int row1Start)
 				finalD = newRow2Den = row2SubResult;
 			}
 
-			printf("We are HERE!!!\n");
-
-			//return row2SubResult;
-
+			//returns private key
 			return finalD;
 		}
 	} 
-
 	
 }
 
@@ -140,6 +145,7 @@ int main(void)
 	int encryptednumbers[1024];
 	int decryptednumbers[1024];
 	int i,j,k,l;
+	long long int mPowerD;
 
 	p = 5;
 	q = 11;
@@ -151,8 +157,11 @@ int main(void)
 
 	standardPhi(phi);
 
+
 	printf("n is: %d\nphi is: %d\n", n, phi);
 
+
+	//gets string to encrypt
 	printf("enter a string to encrypt:\n");
 	scanf("%s", plaintext);
 	strlenghth = strlen(plaintext);
@@ -172,7 +181,7 @@ int main(void)
 	}
 	printf("\n");
 
-	//encryptiption
+	//encryptiption of the string
 	for(i=0; i < strlenghth; i++)
 	{
 		int mPowerE = (pow(plaintextToNum[i],e));
@@ -189,14 +198,15 @@ int main(void)
 
 	//decryptiption
 
-	printf("now for som D\n");
+	//calls function for decryption
 	printf("phi is %d\ne is %d\nrow1start is %d\n", phi,e,row1Start);
 
 	d = getD(phi,e,row1Start);
 	printf("d is %d\n", d);
 	printf("n is %d\n", n);
-	//printf("d is %d\n", d);
 
+
+	//prints out the decryption
 	printf("number before decryption is: ");
 
 	for(i=0; i < strlenghth; i++)
@@ -205,7 +215,7 @@ int main(void)
 	}
 	printf("\n");
 
-	long long int mPowerD;
+	
 
 	printf("initial mPowerD is %lld\n", mPowerD);
 	
@@ -214,10 +224,10 @@ int main(void)
 		mPowerD = (pow(encryptednumbers[i],d));
 		printf("mPowerD = m is %d power %d = %lld\n", encryptednumbers[i],d,mPowerD);
 		decryptednumbers[i] = mPowerD % n;
-		printf("%d\n", decryptednumbers[i]);
-		//mPowerD = -99999;  
+		printf("%d\n", decryptednumbers[i]);  
 	}
 
+	//prints out decryption in number form
 	printf("the decryption in number form is: ");
 
 	for(i=0; i < strlenghth; i++)
@@ -226,11 +236,12 @@ int main(void)
 	}
 	printf("\n");
 
+	//prints out decryption in character form
 	printf("the decryption in character form is: ");
 
 	for(i=0; i < strlenghth; i++)
 	{
-		printf("%C", decryptednumbers[i]); 
+		printf("%c", decryptednumbers[i]); 
 	}
 	printf("\n");
 
