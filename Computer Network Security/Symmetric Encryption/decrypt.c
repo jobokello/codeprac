@@ -1,4 +1,10 @@
-// C server code 
+/*
+Okello Job Opiyo
+P15/37353/2016
+CSC 411
+Symmetric encryption
+*/
+//C server code 
 #include <memory.h> 
 #include <netinet/in.h> 
 #include <stdio.h> 
@@ -36,11 +42,13 @@ int main()
 	puts("Receiving message for decryption... :"); 
 	int count = 0; 
 
-	while (1) { 
+	while (1) 
+	{ 
 		nBytes = recvfrom(udpSocket, buffer, 3000, 0, (struct sockaddr*)&serverStorage, 
 																			&addr_size);  
 
-		for (i = 0; i < nBytes - 1; i++) { 
+		for (i = 0; i < nBytes - 1; i++) 
+		{ 
 			if (buffer[i] != '\n') 
 				xor[i] = (char)(buffer[i] ^ key[i]); 
 			else
@@ -57,7 +65,8 @@ int main()
 		FILE* fp; 
 		fp = fopen("temp.txt", "w+"); 
 
-		for (i = 0; i < nBytes - 1; i++) { 
+		for (i = 0; i < nBytes - 1; i++) 
+		{ 
 			if (xor[i] != '\n') 
 				fprintf(fp, "%X", xor[i]); 
 			else
